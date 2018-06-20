@@ -17,23 +17,25 @@
 </header>
 
 <div class="loginForm">
-<form class=”form-horizontal” action="login" method="post">
+<form:form class="form-horizontal" action="login" modelAttribute="form">
+		<br>
+		<p class="col-sm-8"><span class="err">${msg}</span></p>
 		<div class="form-group">
-			<label for="id" class="col-sm-4">Id</label>
-			<div class="col-sm-8">
-				<input type="text" class="form-control" id="id">
+			<label class="col-sm-1" for="id">ID</label><form:errors path="id" cssStyle="color: red"/>
+			<div class="col-sm-6">
+				<form:input type="text" class="form-control" path="id" />
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="pass" class="col-sm-4">Password</label>
-			<div class="col-sm-8">
-			<input type="password" class="form-control" id="pass">
+			<label class="col-sm-2" for="pass">PASSWORD</label><form:errors path="pass" cssStyle="color: red"/>
+			<div class="col-sm-6">
+			<form:input type="password" class="form-control" path="pass" />
 			</div>
 			<div class="BM">
 	<button type="submit" class="btn">ログイン</button>
 	</div>
 	</div>
-</form>
+</form:form>
 </div>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
