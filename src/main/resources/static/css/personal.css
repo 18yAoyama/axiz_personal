@@ -1,0 +1,244 @@
+/*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
+.prettyprint {
+  background: #ffffff;
+  font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+  border: 0 !important;
+}
+
+.pln {
+  color: #4d4d4c;
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+  
+  border: solid 2px #555555;
+  color: #8e908c;
+}
+
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L4,
+li.L5,
+li.L6,
+li.L7,
+li.L8,
+li.L9 {
+  padding-left: 1em;
+  background-color: #ffffff;
+  list-style-type: decimal !important;
+}
+
+@media screen {
+
+  /* string content */
+
+  .str {
+    color: #718c00;
+  }
+
+  /* keyword */
+
+  .kwd {
+    color: #8959a8;
+  }
+
+  /* comment */
+
+  .com {
+    color: #8e908c;
+  }
+
+  /* type name */
+
+  .typ {
+    color: #4271ae;
+  }
+
+  /* literal value */
+
+  .lit {
+    color: #f5871f;
+  }
+
+  /* punctuation */
+
+  .pun {
+    color: #4d4d4c;
+  }
+
+  /* lisp open bracket */
+
+  .opn {
+    color: #4d4d4c;
+  }
+
+  /* lisp close bracket */
+
+  .clo {
+    color: #4d4d4c;
+  }
+
+  /* markup tag name */
+
+  .tag {
+    color: #c82829;
+  }
+
+  /* markup attribute name */
+
+  .atn {
+    color: #f5871f;
+  }
+
+  /* markup attribute value */
+
+  .atv {
+    color: #3e999f;
+  }
+
+  /* declaration */
+
+  .dec {
+    color: #f5871f;
+  }
+
+  /* variable name */
+
+  .var {
+    color: #c82829;
+  }
+
+  /* function name */
+
+  .fun {
+    color: #4271ae;
+  }
+  
+  
+  
+  
+  
+  
+    li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
+	  list-style-position: outside;
+	  margin-left: 0px;
+	  padding-left: 15px;
+	}
+		
+	code {
+	  font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+	  font-size: 14px;
+  	  line-height: 1.4;
+	}
+	
+	ol.linenums li {
+		list-style: decimal outside;
+		border-left: solid 1px #c0c0c0;
+	}
+	
+	span.title {
+		font-weight: bold;
+		border-bottom: dotted 3px #ccc;
+	}
+	
+	div.main {
+		padding: 20px;
+	}
+	
+	span.em {
+	  font-style: norma;
+	  margin-left: -16px;
+	  margin-right: 0px;
+	  padding-left: 0px;
+	  padding-right: 0px;
+	  background-color: #F79F81;
+	  width: 100%;
+	  font-weight: bold;
+	}
+	
+	div.err {
+		padding: 10px;
+		border: solid 2px #ccc;
+	}
+	
+	header {
+		background-color: black;
+	}
+	
+	.loginForm {
+		max-width: 500px;
+		margin: auto;
+	}
+	
+	label.loginForm {
+		font-weight: bold;
+	}
+	
+	ul {
+		list-style-type: none;
+	}
+	
+	li.menuTitle {
+		font-weight: bold;
+		padding: 10px 0px 10px 0px;
+	}
+	
+	li.menu {
+		padding: 5px 0px 5px 0px;
+		border-bottom: solid 1px black;
+	}
+	
+	li.blank {
+		height: 30px;
+	}
+	
+	a:not(.btn), a:link:not(.btn) {
+	  color: #5f9ea0;
+	}
+	
+	p.title {
+		padding: 10px;
+		font-size: 30px;
+		border-bottom: solid 1px black;
+	}
+	
+	div.article, div.comment, div.postComment {
+		margin: 30px;
+	}
+	
+	div.article {
+		border-bottom: solid 2px black;
+	}
+	
+	div.commentList {
+		margin: 20px;
+		padding: 10px;
+		border: solid 1px black;
+	}
+	
+	p.user {
+		color: #5f9ea0;
+	
+	}
+	p.comment {
+		font-size: 15px;
+	}
+	
+	div.BM {
+		margin: 15px;
+	}
+	
+	div.center {
+		padding: 30px;
+		text-align:center;
+	}
+	
+	div.content {
+		padding: 20px;
+	}
+}
