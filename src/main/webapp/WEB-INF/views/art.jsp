@@ -21,7 +21,7 @@
 	<div class="col-sm-2">
 			<ul>
 				<li class="menuTitle">User</li>
-				<li class="menu">サトーさん</li>
+				<li class="menu">${User.nickname}さん</li>
 				<li class="menu"><a href="user">投稿記事一覧</a></li>
 				<li class="menu"><a href="nickname">ニックネーム変更</a></li>
 				<li class="blank"></li>
@@ -45,34 +45,41 @@
 		</div>
 		<div class="comment">
 			<p>投稿されたコメント</p>
-			<div class="commentList">
-				<p class="user">あああさん</p>
-				<p class="comment">あいうえお</p>
-			</div>
-			<div class="commentList">
-				<p class="user">あああさん</p>
-				<p class="comment">あいうえお(自分のコメント)</p>
-				<div class="btn-toolbar">
-  					<div class="btn-group">
-						<form class="form-horizontal" action="editC" method="post">
+				<c:forEach var="list" items="${comment}">
+				    <div class="commentList">
+				      <p class="user">${list.nickname}さん</p>
+				      <p class="comment">${list.comment}</p>
+				 <c:choose>
+					<c:when test = "${User.user_id == list.user_id}">
+					<div class="btn-toolbar"><div class="btn-group">
+						<form:form class="form-horizontal" action="editC" modelAttribute="form">
+							<form:hidden path="art_id" />
+							<input type="hidden" name="comment_id" value="${list.comment_id}" />
+							<input type="hidden" name="comment" value="${list.comment}" />
 							<button type="submit" class="btn btn-info">編集</button>
-						</form>
-						<form class="form-horizontal" action="deleteC" method="post">
+						</form:form>
+						<form:form class="form-horizontal" action="deleteC" modelAttribute="form">
+							<form:hidden path="art_id" />
+							<input type="hidden" name="comment_id" value="${list.comment_id}" />
+							<input type="hidden" name="comment" value="${list.comment}" />
 							<button type="submit" class="btn btn-danger">削除</button>
-						</form>
+						</form:form>
+					</div></div>
+					</c:when>
+				</c:choose>
 					</div>
-				</div>
-			</div>
+				</c:forEach>
 			<div class="commentPost">
-			<form class="form-horizontal" action="postComment" method="post">
+			<form:form class="form-horizontal" action="postComment" modelAttribute="form">
 				<div class="postComment">
 					<div class="form-group">
 						<label for="content">コメント</label>
-						<textarea class="form-control" id="content" rows="3"></textarea>
-						<button type="submit" class="btn btn-success">投稿</button>
+							<form:textarea class="form-control" path="comment" rows="3" />
+							<form:hidden path="art_id" />
+							<form:button type="submit" class="btn btn-success">投稿</form:button>
 					</div>
 				</div>
-			</form>
+			</form:form>
 			</div>
 		</div>
 	</div>

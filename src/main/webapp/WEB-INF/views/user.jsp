@@ -36,7 +36,12 @@
 			</ul>
 		</div>
 		<div class="col-sm-10">
-			投稿記事一覧
+			<p>投稿記事一覧</p>
+			<c:forEach var="list" items="${list}">
+			    <div class="outlineArt">
+			      <a href="art?art_id=${list.art_id}">${list.title}</a><br>
+			    </div>
+			</c:forEach>
 		</div>
 	</div>
 </div>

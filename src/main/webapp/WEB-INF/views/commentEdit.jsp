@@ -20,7 +20,7 @@
 	<div class="col-sm-2">
 			<ul>
 				<li class="menuTitle">User</li>
-				<li class="menu">サトーさん</li>
+				<li class="menu">${User.nickname}さん</li>
 				<li class="menu"><a href="user">投稿記事一覧</a></li>
 				<li class="menu"><a href="nickname">ニックネーム変更</a></li>
 				<li class="blank"></li>
@@ -36,14 +36,17 @@
 			</ul>
 	</div>
 	<div class="col-sm-10">
-		<form class="form-horizontal" action="editComment" method="post">
+		<form:form class="form-horizontal" action="editComment" modelAttribute="form">
 				<div class="form-group">
 					<label for="content">コメントを編集してください</label>
-					<textarea class="form-control" id="content" rows="3">元のコメント</textarea>
-					<button type="submit"  class="btn btn-info">編集</button>
+					<form:hidden path="art_id" />
+					<form:hidden path="comment_id" />
+					<form:textarea class="form-control" path="comment" rows="3" />
+					<button type="submit" class="btn btn-info">編集</button>
+					<input type="submit" class="btn btn-success" name="button" value="元の記事に戻る" onclick="location.href='art?art_id=${form.art_id}'; return false;">
 				</div>
 
-		</form>
+		</form:form>
 	</div>
 </div>
 </div>

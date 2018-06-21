@@ -36,13 +36,16 @@
 			</ul>
 	</div>
 	<div class="col-sm-10">
-		<form class="form-horizontal" action="deleteComment" method="post">
+		<form:form class="form-horizontal" action="deleteComment" modelAttribute="form">
 			<div class="form-group">
 			<label for="content">コメントを削除しますか？</label>
-			<textarea class="form-control" id="content" rows="3" readonly>元のコメント</textarea>
+			<form:hidden path="art_id" />
+			<form:hidden path="comment_id" />
+			<div class="commentList"> <p class="comment">${form.comment}</p></div>
 			<button type="submit" class="btn btn-danger">削除</button>
+			<input type="submit" class="btn btn-success" name="button" value="元の記事に戻る" onclick="location.href='art?art_id=${form.art_id}'; return false;">
 		</div>
-		</form>
+		</form:form>
 	</div>
 </div>
 </div>

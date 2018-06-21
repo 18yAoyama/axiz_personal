@@ -1,5 +1,7 @@
 package jp.co.axiz.web.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +13,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import jp.co.axiz.web.entity.Art;
 import jp.co.axiz.web.entity.User_info;
 import jp.co.axiz.web.form.Form;
 import jp.co.axiz.web.form.Login;
 import jp.co.axiz.web.service.LoginS;
+import jp.co.axiz.web.service.impl.ArtServiceImpl;
 
 @Controller
 public class LoginController {
@@ -24,6 +28,9 @@ public class LoginController {
 
 	@Autowired
 	private LoginS loginS;
+
+	@Autowired
+	private ArtServiceImpl artS;
 
 	@RequestMapping("/index")
 	public String login (@ModelAttribute("form") Login login, Model model) {
@@ -53,7 +60,10 @@ public class LoginController {
 		session.setAttribute("User", loginUser);
 
 		//自分の記事全件表示
+		//投稿した記事を一覧表示select
+		List<Art> list = artS.selectMyAll(loginUser.getUser_id());
 
+		model.addAttribute("list", list);
 
 		return "user";
 	}
@@ -61,7 +71,13 @@ public class LoginController {
 	//メニューから投稿記事一覧リンクに飛んだ場合
 	@RequestMapping("/user")
 	public String myAll (@ModelAttribute("form") Form form, Model model) {
+		User_info user = (User_info)session.getAttribute("User");
 
+		//自分の記事全件表示
+		//投稿した記事を一覧表示select
+		List<Art> list = artS.selectMyAll(user.getUser_id());
+
+		model.addAttribute("list", list);
 		//自分の記事全件表示
 		return "user";
 	}

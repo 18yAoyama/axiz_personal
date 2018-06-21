@@ -19,6 +19,7 @@ import jp.co.axiz.web.entity.Art;
 import jp.co.axiz.web.entity.User_info;
 import jp.co.axiz.web.form.ArtForm;
 import jp.co.axiz.web.service.impl.ArtServiceImpl;
+import jp.co.axiz.web.service.impl.CommentService;
 
 @Controller
 @SessionAttributes("artform")
@@ -29,6 +30,9 @@ public class ArtController {
 
 	@Autowired
 	ArtServiceImpl artS;
+
+	@Autowired
+	CommentService comS;
 
 	//メニューから投稿画面へ
 	@RequestMapping("/postArt")
@@ -170,8 +174,19 @@ public class ArtController {
 
 		//art_idを元に記事情報検索
 		Art art = artS.selectArt(art_id);
+
+		//改行処理
 		art.setContent(artS.replace(art.getContent()));
+
+		//記事ページに情報渡す
 		model.addAttribute("art", art);
+
+		//コメント欄にart_id情報を渡す（hidden）
+		artform.setArt_id(art_id);
+		model.addAttribute("form", artform);
+
+		//コメント表示
+		model.addAttribute("comment", comS.CommentByArt(art_id));
 
 		return "art";
 	}
