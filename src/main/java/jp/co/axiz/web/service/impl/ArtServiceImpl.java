@@ -31,6 +31,10 @@ public class ArtServiceImpl {
 		return artDao.selectMyAll(user_id);
 	}
 
+	public List<Art> selectNewAll(){
+		return artDao.selectNewAll();
+	}
+
 	public Art selectArt(Integer art_id) {
 		List<Art> list = artDao.selectArt(art_id);
 		if(list.size() == 0) {

@@ -18,4 +18,8 @@ public class LoginServiceImpl implements LoginS {
 		return userDao.findbyIdPass(id, pass);
 	}
 
+	public void updatenick(String user_id, String nickname) {
+		userDao.updateNick(user_id, nickname);
+	}
+
 }

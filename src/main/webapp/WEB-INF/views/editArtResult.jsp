@@ -21,7 +21,7 @@
 		<div class="col-sm-2">
 			<ul>
 				<li class="menuTitle">User</li>
-				<li class="menu">${user}さん</li>
+				<li class="menu">${ User.nickname }さん</li>
 				<li class="menu"><a href="user">投稿記事一覧</a></li>
 				<li class="menu"><a href="nickname">ニックネーム変更</a></li>
 				<li class="blank"></li>
@@ -36,10 +36,10 @@
 				<li class="menu"><a href="logout">ログアウト</a></li>
 			</ul>
 	</div>
-	<div class="col-sm-10">
+	<div class="col-sm-8">
 	<p>編集が完了しました</p>
 
-	<a href="art?art_id=${art_id}">記事タイトル</a>
+	<a href="art?art_id=${art.art_id}">${art.art_title}</a>
 
 	</div>
 </div>

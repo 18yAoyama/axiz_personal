@@ -76,6 +76,8 @@ public class ArtController {
 
 		//投稿した記事のidセット
 		model.addAttribute("art_id", artS.lastId());
+		//投稿した記事のタイトルセット
+		model.addAttribute("title", artform.getTitle());
 
 		return "postArtResult";
 	}
@@ -123,7 +125,7 @@ public class ArtController {
 
 			//記事を編集するupdate
 			artS.update(artform.getArt_id(), artform.getTitle(), artform.getContent());
-			model.addAttribute("art_id", artform.getArt_id());
+			model.addAttribute("art", artform);
 			return "editArtResult";
 
 		} else {
@@ -197,7 +199,9 @@ public class ArtController {
 	public String newAll (@ModelAttribute("form") ArtForm artform, Model model) {
 
 		//新着順に記事を一覧表示
+		List<Art> list = artS.selectNewAll();
 
+		model.addAttribute("list", list);
 		return "newAll";
 	}
 

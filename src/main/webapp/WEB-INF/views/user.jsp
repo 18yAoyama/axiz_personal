@@ -35,7 +35,7 @@
 				<li class="menu"><a href="logout">ログアウト</a></li>
 			</ul>
 		</div>
-		<div class="col-sm-10">
+		<div class="col-sm-8">
 			<p>投稿記事一覧</p>
 			<c:forEach var="list" items="${list}">
 			    <div class="outlineArt">

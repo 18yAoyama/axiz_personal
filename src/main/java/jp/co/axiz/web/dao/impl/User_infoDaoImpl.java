@@ -48,4 +48,8 @@ public class User_infoDaoImpl implements Dao {
 
 	}
 
+	public void updateNick(String user_id, String nickname) {
+		jdbcTemplate.update("UPDATE user_info SET nickname = ? WHERE user_id = ?", nickname, user_id);
+	}
+
 }
