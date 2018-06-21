@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 <script src="js/jquery.js"></script>
 <script src="js/jquery.magicpreview.js"></script>
+<script src="js/jquery.magicpreview1.js"></script>
 </head>
 <body>
 <header>
@@ -23,7 +24,7 @@
 	<div class="col-sm-2">
 			<ul>
 				<li class="menuTitle">User</li>
-				<li class="menu">サトーさん</li>
+				<li class="menu">${user}さん</li>
 				<li class="menu"><a href="user">投稿記事一覧</a></li>
 				<li class="menu"><a href="nickname">ニックネーム変更</a></li>
 				<li class="blank"></li>
@@ -39,19 +40,21 @@
 			</ul>
 	</div>
 	<div class="col-sm-5">
-		<form class="form-horizontal" action="editArtResult" name="artForm" method="post">
+		<p><span class="err">${msg}</span></p>
+		<form:form class="form-horizontal" action="editArtResult" name="artForm" modelAttribute="form">
 				<div class="form-group">
-					<label for="title">タイトル</label>
-					<input type="text" class="form-control" id="title" name="title">
+					<label for="title">タイトル</label><form:errors path="title" cssStyle="color: red"/>
+					<form:input type="text" class="form-control" path="title" name="title" />
 				</div>
 				<div class="form-group">
-					<label for="content">内容</label><input type="button" class="btn btn-default" value="コードの挿入" onClick="addTF()"><br>
+					<label for="content">内容</label><input type="button" class="btn btn-default" value="コードの挿入" onClick="addTF()">
+					<form:errors path="content" cssStyle="color: red"/><br>
 					<div>
-					<textarea class="form-control" id="content" rows="8" name="content">元の編集内容</textarea>
+					<form:textarea class="form-control" rows="8" name="content" path="content" />
 					</div>
 			</div>
 			<button type="submit" class="btn btn-info">編集</button>
-		</form>
+		</form:form>
 	</div>
 	<div class="col-sm-5">
 		<p class="title" id="mp_title">タイトル</p>

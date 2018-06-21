@@ -1,4 +1,9 @@
 function addTF()
 {
-	document.artForm.content.value += '<pre class="prettyprint linenums:1"><code>//‚±‚±‚ÉƒR[ƒh‚ğ‹LÚ‚µ‚Ä‚­‚¾‚³‚¢</code></pre>';
+	document.artForm.content.value += '<pre class="prettyprint linenums:1"><code>//ï¿½ï¿½ï¿½ï¿½ï¿½ÉƒRï¿½[ï¿½hï¿½ï¿½ï¿½Lï¿½Ú‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</code></pre>';
+}
+
+function load() {
+	alert('fff');
+	$.getScript("https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js");
 }

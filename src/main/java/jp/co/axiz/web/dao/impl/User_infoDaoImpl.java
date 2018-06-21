@@ -30,4 +30,22 @@ public class User_infoDaoImpl implements Dao {
 		return list.get(0);
 	}
 
+	@Override
+	public void insert() {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
+
+	@Override
+	public void update() {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
+
+	@Override
+	public void delete() {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
+
 }

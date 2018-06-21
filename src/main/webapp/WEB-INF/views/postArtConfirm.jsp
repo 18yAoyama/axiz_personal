@@ -37,26 +37,28 @@
 			</ul>
 	</div>
 	<div class="col-sm-10">
-		<form class="form-horizontal" action="postArtResult" method="post">
+		<form:form class="form-horizontal" action="postArtResult" modelAttribute="form">
 		この内容でよろしいですか？
-			<div class="form-group">
-				<label for="title">タイトル</label>
-				<input type="text" class="form-control" id="title" readonly>
+		<div class="article">
+			<div class="title">
+				<p class="title">${postArt.title}</p>
 			</div>
-			<div class="form-group">
-				<label for="content">内容</label>
-				<div>
-				<textarea class="form-control" id="content" rows="8" readonly></textarea>
-				</div>
+			<div class="content">
+				${postArt.content}
 			</div>
-		<input type="submit" class="btn btn-info" name="button" value="編集画面に戻る" onclick="location.href='postArt'; return false;">
+		</div>
+		<form:hidden path="title" value="${postArt.title}"></form:hidden>
+		<form:hidden path="content" value="${postArt.content}"></form:hidden>
+		<form:button class="btn btn-info" name="return">編集画面に戻る</form:button>
 		<button type="submit" class="btn btn-success">投稿</button>
-		</form>
+		</form:form>
 	</div>
 
 </div>
 </div>
+<script src="js/code.js">
 
+</script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>

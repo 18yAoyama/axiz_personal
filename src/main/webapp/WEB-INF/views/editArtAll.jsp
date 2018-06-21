@@ -37,15 +37,11 @@
 	</div>
 	<div class="col-sm-10">
 	<p>編集したい記事を選んでください</p>
-			<div class="outlineArt">
-				<a href="editArtConfirm?art_id=1001">記事タイトル①</a><br>
-				<p>記事概要①</p>
-			</div>
-		<div class="outlineArt">
-			<a href="editArtConfirm?art_id=1001">記事タイトル②</a><br>
-			<p>記事概要②</p>
-		</div>
-
+		<c:forEach var="list" items="${list}">
+		    <div class="outlineArt">
+		      <a href="editArtConfirm?art_id=${list.art_id}">${list.title}</a><br>
+		    </div>
+		</c:forEach>
 	</div>
 </div>
 </div>

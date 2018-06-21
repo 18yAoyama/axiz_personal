@@ -40,19 +40,20 @@
 			</ul>
 	</div>
 	<div class="col-sm-5">
-		<form class="form-horizontal" action="postArtConfirm" name="artForm" method="post">
+		<form:form class="form-horizontal" action="postArtConfirm" name="artForm" modelAttribute="form">
 				<div class="form-group">
-					<label for="title">タイトル</label>
-					<input type="text" class="form-control" id="title" name="title">
+					<label for="title">タイトル</label><form:errors path="title" cssStyle="color: red"/>
+					<form:input type="text" class="form-control" path="title" name="title" />
 				</div>
 				<div class="form-group">
-					<label for="content">内容</label><input type="button" class="btn btn-default" value="コードの挿入" onClick="addTF()"><br>
+					<label for="content">内容</label><input type="button" class="btn btn-default" value="コードの挿入" onClick="addTF()">
+					<form:errors path="content" cssStyle="color: red"/><br>
 					<div>
-					<textarea class="form-control" id="content" rows="8" name="content"></textarea>
+					<form:textarea class="form-control" path="content" rows="8" name="content" ></form:textarea>
 					</div>
 			</div>
 			<button type="submit" class="btn btn-info">投稿確認</button>
-		</form>
+		</form:form>
 	</div>
 	<div class="col-sm-5">
 		<p class="title" id="mp_title">タイトル</p>
@@ -70,6 +71,7 @@
 {
 	document.artForm.content.value += '<pre class="prettyprint linenums:1"><code>//ここにコードを記載してください</code></pre>';
 }
+
 </script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>

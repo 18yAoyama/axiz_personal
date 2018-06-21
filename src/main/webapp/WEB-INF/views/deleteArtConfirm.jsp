@@ -38,17 +38,11 @@
 	</div>
 	<div class="col-sm-10">
 		この記事を削除しますか？
+		<div class="article">
+			<div class="title"><p class="title">${ delete.title }</p></div>
+			<div class="content">${ delete.content }</div>
+		</div>
 		<form class="form-horizontal" action="deleteArtResult" method="post">
-			<div class="form-group">
-				<label for="title">タイトル</label>
-				<input type="text" class="form-control" id="title" readonly>
-			</div>
-			<div class="form-group">
-				<label for="content">内容</label>
-				<div>
-				<textarea class="form-control" id="content" rows="10" readonly></textarea>
-				</div>
-			</div>
 		<input type="submit" class="btn btn-info" name="button" value="記事一覧に戻る" onclick="location.href='deleteArt'; return false;">
 		<button type="submit" class="btn btn-danger">削除</button>
 		</form>

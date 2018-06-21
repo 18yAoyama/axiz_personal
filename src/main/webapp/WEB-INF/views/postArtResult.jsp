@@ -38,7 +38,7 @@
 	<div class="col-sm-10">
 	<p>投稿が完了しました</p>
 
-	<a href="art?art_id=1001">記事タイトル</a>
+	<a href="art?art_id=${art_id}">記事タイトル</a>
 
 	</div>
 </div>

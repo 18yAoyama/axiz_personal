@@ -39,11 +39,9 @@
 	<div class="col-sm-8">
 		<div class="article">
 			<div class="title">
-				<p class="title">記事タイトル</p>
+				<p class="title">${ art.title }</p>
 			</div>
-			<div class="content">
-				<p class="content">記事内容<br>あああああ<br>ああああ</p>
-			</div>
+			<div class="content">${ art.content }</div>
 		</div>
 		<div class="comment">
 			<p>投稿されたコメント</p>
