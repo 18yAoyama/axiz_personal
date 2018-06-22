@@ -40,7 +40,9 @@
 	<p>編集したい記事を選んでください</p>
 		<c:forEach var="list" items="${list}">
 		    <div class="outlineArt">
+		    <span>${list.title}</span>
 		      <a href="editArtConfirm?art_id=${list.art_id}">${list.title}</a><br>
+		      <p>${list.content}</p>
 		    </div>
 		</c:forEach>
 	</div></div>

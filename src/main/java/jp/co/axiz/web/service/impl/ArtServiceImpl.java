@@ -28,11 +28,60 @@ public class ArtServiceImpl {
 	}
 
 	public List<Art> selectMyAll(String user_id) {
-		return artDao.selectMyAll(user_id);
+		List<Art> list = artDao.selectMyAll(user_id);
+
+		for (Art art : list) {
+			String pare;
+			String expr = art.getContent();
+			int codeStart = expr.lastIndexOf("<");
+			int codeClose = expr.indexOf(">", codeStart) + 1;
+
+			while (codeStart != -1) {
+
+				pare = expr.substring(codeStart, codeClose);
+				expr = expr.replace(pare, "");
+
+				codeStart = expr.lastIndexOf("<");
+				codeClose = expr.indexOf(">", codeStart) + 1;
+
+			}
+			if(expr.length() > 50) {
+				expr = expr.substring(0,50);
+			}
+			art.setContent(expr);
+
+		}
+
+		return list;
 	}
 
 	public List<Art> selectNewAll(){
-		return artDao.selectNewAll();
+		List<Art> list = artDao.selectNewAll();
+
+		for (Art art : list) {
+			String pare;
+			String expr = art.getContent();
+			int codeStart = expr.lastIndexOf("<");
+			int codeClose = expr.indexOf(">", codeStart) + 1;
+
+			while (codeStart != -1) {
+
+				pare = expr.substring(codeStart, codeClose);
+				expr = expr.replace(pare, "");
+
+				codeStart = expr.lastIndexOf("<");
+				codeClose = expr.indexOf(">", codeStart) + 1;
+
+			}
+			if(expr.length() > 50) {
+				expr = expr.substring(0,50);
+			}
+			art.setContent(expr);
+
+		}
+
+
+		return list;
 	}
 
 	public Art selectArt(Integer art_id) {
@@ -48,7 +97,35 @@ public class ArtServiceImpl {
 	}
 
 	public String replace(String content) {
-		return content.replaceAll("\n","<BR>");
+		String raw = content;
+
+		//preタグのみ例外
+		int last = content.length()-1;
+
+		int codeStart = content.lastIndexOf("<pre");
+		int codeClose = content.indexOf("</pre>", codeStart) + 5;
+
+		while (codeStart != -1 && codeClose != 5) {
+			if(codeClose != last) {
+				String moto = content.substring(codeClose, last);
+				String newC = moto.replaceAll("\n","<BR>");
+				content = content.replace(moto, newC);
+
+			}
+
+			raw = content.substring(0, codeStart);
+			last = codeStart;
+
+			codeStart = raw.lastIndexOf("<pre");
+			codeClose = raw.indexOf("</pre>", codeStart) + 5;
+		}
+
+		if (raw.length() != 0) {
+			String newC = raw.replaceAll("\n","<BR>");
+			content = content.replace(raw, newC);
+		}
+
+		return content;
 	}
 
 	public String replaceR(String content) {
