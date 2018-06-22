@@ -21,7 +21,7 @@
 	<div class="col-sm-2">
 			<ul>
 				<li class="menuTitle">User</li>
-				<li class="menu">${ User.nickname }さん</li>
+				<li class="menu"><span class="user_name">${ User.nickname }</span>さん</li>
 				<li class="menu"><a href="user">投稿記事一覧</a></li>
 				<li class="menu"><a href="nickname">ニックネーム変更</a></li>
 				<li class="blank"></li>
@@ -37,12 +37,13 @@
 			</ul>
 	</div>
 	<div class="col-sm-8">
+	<div class="artAll">
 		<form:form class="form-horizontal" action="nickname" modelAttribute="form">
 			<label for="id">ニックネームを変更してください</label>
 			<form:input class="form-control" path="nickname" />
 			<button type="submit" class="btn btn-info">変更</button>
 		</form:form>
-	</div>
+	</div></div>
 </div>
 </div>
 

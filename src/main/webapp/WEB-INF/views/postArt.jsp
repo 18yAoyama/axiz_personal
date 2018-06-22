@@ -24,7 +24,7 @@
 	<div class="col-sm-2">
 			<ul>
 				<li class="menuTitle">User</li>
-				<li class="menu">${ User.nickname }さん</li>
+				<li class="menu"><span class="user_name">${ User.nickname }</span>さん</li>
 				<li class="menu"><a href="user">投稿記事一覧</a></li>
 				<li class="menu"><a href="nickname">ニックネーム変更</a></li>
 				<li class="blank"></li>
@@ -39,14 +39,14 @@
 				<li class="menu"><a href="logout">ログアウト</a></li>
 			</ul>
 	</div>
-	<div class="col-sm-5">
+	<div class="col-sm-5"><div class="artEdit">
 		<form:form class="form-horizontal" action="postArtConfirm" name="artForm" modelAttribute="form">
 				<div class="form-group">
 					<label for="title">タイトル</label><form:errors path="title" cssStyle="color: red"/>
 					<form:input type="text" class="form-control" path="title" name="title" />
 				</div>
 				<div class="form-group">
-					<label for="content">内容</label><input type="button" class="btn btn-default" value="コードの挿入" onClick="addTF()">
+					<label class="content" for="content">内容</label><input type="button" class="btn btn-default" value="コードの挿入" onClick="addTF()">
 					<form:errors path="content" cssStyle="color: red"/><br>
 					<div>
 					<form:textarea class="form-control" path="content" rows="8" name="content" ></form:textarea>
@@ -54,12 +54,12 @@
 			</div>
 			<button type="submit" class="btn btn-info">投稿確認</button>
 		</form:form>
-	</div>
-	<div class="col-sm-5">
+	</div></div>
+	<div class="col-sm-5"><div class="artEdit">
 		<p class="title" id="mp_title">タイトル</p>
 		<div class="content" id="mp_content">内容</div>
 		<div id="mp_code"></div>
-	</div>
+	</div></div>
 
 </div>
 </div>

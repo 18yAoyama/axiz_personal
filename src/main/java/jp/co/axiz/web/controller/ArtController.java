@@ -152,6 +152,7 @@ public class ArtController {
 	public String deleteArt (@ModelAttribute("form") ArtForm artform, @RequestParam("art_id") Integer art_id, Model model) {
 		//選択した記事の情報を表示する
 		Art art = artS.selectArt(art_id);
+		art.setContent(artS.replace(art.getContent()));
 		session.setAttribute("delete", art);
 
 		return "deleteArtConfirm";

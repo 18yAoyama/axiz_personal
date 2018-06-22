@@ -23,8 +23,10 @@
 		<div class="form-group">
 			<label class="col-sm-1" for="id">ID</label><form:errors path="id" cssStyle="color: red"/>
 			<div class="col-sm-6">
+
 				<form:input type="text" class="form-control" path="id" />
 			</div>
+
 		</div>
 		<div class="form-group">
 			<label class="col-sm-2" for="pass">PASSWORD</label><form:errors path="pass" cssStyle="color: red"/>

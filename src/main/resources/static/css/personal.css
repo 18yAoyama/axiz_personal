@@ -245,4 +245,23 @@ li.L9 {
 	span.err {
 		color: red;
 	}
+
+	span.user_name {
+		color: #F79F81;
+		font-weight: bold;
+	}
+
+	div.artAll {
+		padding: 5%;
+	}
+
+	div.artEdit {
+		padding-top: 5%;
+	}
+
+	label.content{
+		margin-right: 5%;
+	}
+
+
 }

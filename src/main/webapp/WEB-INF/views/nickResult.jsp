@@ -21,7 +21,7 @@
 	<div class="col-sm-2">
 			<ul>
 				<li class="menuTitle">User</li>
-				<li class="menu">${ User.nickname }さん</li>
+				<li class="menu"><span class="user_name">${ User.nickname }</span>さん</li>
 				<li class="menu"><a href="user">投稿記事一覧</a></li>
 				<li class="menu"><a href="nickname">ニックネーム変更</a></li>
 				<li class="blank"></li>
@@ -37,10 +37,11 @@
 			</ul>
 	</div>
 	<div class="col-sm-8">
+	<div class="artAll">
 	<p>ニックネームの変更が完了しました</p>
-	<p>ニックネーム：${ User.nickname }</p>
+	<p>ニックネーム：<span class="user_name">${ User.nickname }</span></p>
 
-	</div>
+	</div></div>
 </div>
 </div>
 

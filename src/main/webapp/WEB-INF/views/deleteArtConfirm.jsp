@@ -21,7 +21,7 @@
 	<div class="col-sm-2">
 			<ul>
 				<li class="menuTitle">User</li>
-				<li class="menu">${ User.nickname }さん</li>
+				<li class="menu"><span class="user_name">${ User.nickname }</span>さん</li>
 				<li class="menu"><a href="user">投稿記事一覧</a></li>
 				<li class="menu"><a href="nickname">ニックネーム変更</a></li>
 				<li class="blank"></li>
@@ -37,6 +37,7 @@
 			</ul>
 	</div>
 	<div class="col-sm-8">
+	<div class="artAll">
 		この記事を削除しますか？
 		<div class="article">
 			<div class="title"><p class="title">${ delete.title }</p></div>
@@ -46,6 +47,7 @@
 		<input type="submit" class="btn btn-info" name="button" value="記事一覧に戻る" onclick="location.href='deleteArt'; return false;">
 		<button type="submit" class="btn btn-danger">削除</button>
 		</form>
+		</div>
 	</div>
 </div>
 </div>
